@@ -10,7 +10,7 @@ const Signup = () => {
       email:"",
       password:""
     })
-    const signupuser= (e)=>{
+    const signupuser= async(e)=>{
       e.preventDefault()
 
     const promise = account.create(
@@ -20,11 +20,11 @@ const Signup = () => {
       user.name
     )
 
-    promise.then((response) => {
+    promise.then(function(response){
       // console.log(response)
-      navigate('/')
-    },(error) =>{
-      console.log(error)
+      navigate('/profile')
+    },function(error) {
+      console.log(error);
     })
   }
 
